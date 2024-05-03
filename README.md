@@ -1,9 +1,6 @@
-
 # Webpack Template
 
-A Webpack Template with Eslint and Prettier Configured
-
-
+Weather App using Vanilla JS
 
 ## Development
 
@@ -28,4 +25,3 @@ To Deploy in git pages
 ```bash
   npm publish
 ```
-
