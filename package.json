@@ -1,7 +1,7 @@
 {
-  "name": "webpack_demo_app",
+  "name": "weather_app",
   "version": "1.0.0",
-  "description": "Demo Webpack App Configuration",
+  "description": "Live Weather casting app using external Api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
