@@ -141,3 +141,6 @@ out
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node,dotenv
+
+#Project Idea Text
+Project_Notes.*
