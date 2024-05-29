@@ -40,6 +40,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .search-form {
   grid-area: search;
@@ -70,37 +71,38 @@ form {
   grid-template-columns: 3.5fr minmax(50px, auto);
   gap: 0;
 }
+
 input {
-  border: 3px;
-  /* padding: auto 10px; */
+  border: 3px solid gray; /* Set the initial border style */
   min-width: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   letter-spacing: 1px;
   font-size: larger;
-  /* border: 1px solid black; */
   border-radius: 15px 0 0 15px;
   border-right: 0 !important;
   padding-left: 10px;
-  background-color: rgb(109 155 255);
+  background-color: rgb(109, 155, 255);
+  outline: none; /* Remove the default focus outline */
 }
-/* input:focus {
-  border: none;
-} */
-/* .search_location-btn:focus {
-  border: none;
-} */
+
 input:focus {
-  border: 3px solid black;
+  border: 3px solid black; /* Change the border style on focus */
   border-right: 0;
   transition: border 0.3s;
-  outline: none;
 }
-input:focus + button {
-  border: 3px solid black;
+
+button.search_location-btn {
+  border: 3px solid gray; /* Set the initial border style for the button */
+  border-left: none;
+  background-color: rgb(109, 155, 255);
+  outline: none; /* Remove the default focus outline */
+}
+
+input:focus + button.search_location-btn {
+  border: 3px solid black; /* Change the border style for the button on input focus */
   border-left: 0;
   transition: border 0.3s;
-  outline: none;
 }
 
 .toggle_metric {
@@ -128,4 +130,93 @@ input:focus + button {
 }
 .toggle_metric button:last-child {
   margin-right: 0;
+}
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titleArea h1,
+.titleArea h4 {
+  margin: 10px 0;
+}
+.area_head {
+  font-size: 2em;
+  text-align: center;
+}
+.date_time {
+  font-size: large;
+  text-align: center;
+}
+.location_dropdown {
+  min-width: 15em;
+  position: absolute;
+  margin: 2em 0;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.location_dropdown * {
+  box-sizing: border-box;
+}
+.location_menu {
+  list-style: none;
+  padding: 0em 0.5em;
+  background: rgb(3 126 134 / 90%);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+  border-radius: 0.5em;
+  width: 100%;
+  /* Change to 15em on click */
+  height: 0;
+  overflow-y: scroll;
+}
+.location_menu::-webkit-scrollbar {
+  width: 8px;
+}
+.location_menu::-webkit-scrollbar-track {
+  background-color: #40404084;
+}
+.location_menu::-webkit-scrollbar-thumb {
+  background-color: #39678f;
+}
+.location_menu::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}
+.location_menu li {
+  padding: 0.7em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.location_menu li:hover {
+  background-color: #242424;
+  color: white;
+}
+.active_menu {
+  background-color: #1e1e1e;
+  color: white;
+}
+.text-fade-in {
+  animation: textFade 300ms ease-out;
+}
+.menu_open {
+  border: 1px #383838;
+  height: 15em;
+}
+@keyframes textFade {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .area_head {
+    font-size: 1.5em;
+  }
 }
