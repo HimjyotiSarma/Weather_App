@@ -1,5 +1,4 @@
 export default function calcTime(offset) {
-  console.log("Hello")
   // create Date object for current location
   let d = new Date()
 

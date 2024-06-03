@@ -205,6 +205,40 @@ input:focus + button.search_location-btn {
   border: 1px #383838;
   height: 15em;
 }
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: rgb(9, 53, 85);
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.change_Display_Menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hide_Menu {
+  display: none;
+}
+.show_Menu {
+  display: block;
+}
+.tempDescription {
+  text-transform: capitalize;
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
 @keyframes textFade {
   0% {
     transform: translateX(-1em);

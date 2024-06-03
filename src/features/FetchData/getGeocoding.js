@@ -1,4 +1,4 @@
-const API_KEY = process.env.OPEN_WEATHER_API_KEY
+const API_KEY = process.env.API_KEY
 // const getGeocoding = async (q, limit = 5) => {
 //   const params = new URLSearchParams({
 //     q,
@@ -12,14 +12,14 @@ const API_KEY = process.env.OPEN_WEATHER_API_KEY
 //   return data
 // }
 
-const getGeocoding = async (q, tempFormat) => {
+const getGeocoding = async (q) => {
   const params = new URLSearchParams({
     q,
-    units: tempFormat,
-    appid: API_KEY, // Corrected: Use 'appid' instead of 'API_KEY'
+    aqi: "yes",
+    key: API_KEY, // Corrected: Use 'appid' instead of 'API_KEY'
   })
   const response = await fetch(
-    "https://api.openweathermap.org/data/2.5/weather?" + params,
+    "http://api.weatherapi.com/v1/current.json?" + params,
   )
   const data = await response.json()
   return data

@@ -26,16 +26,15 @@ const loadMainContent = async (
   tempFormat = "metric",
 ) => {
   try {
-    const weatherData = await getGeocoding(searchParam, tempFormat)
-    console.log(weatherData)
-    await titleSection(
-      weatherData.name,
-      weatherData.sys.country,
-      weatherData.timezone,
-    )
+    // const weatherData = await getGeocoding(searchParam)
+    // console.log(weatherData)
+    // await titleSection(
+    //   weatherData.name,
+    //   weatherData.sys.country,
+    //   weatherData.timezone,
+    // )
     getSearchValue()
-    console.log(searchData)
-    await weatherSection(weatherData, tempFormat)
+    // await weatherSection(weatherData, tempFormat)
     // await getGeoLocation("guwahati")
 
     // await forcastSection(forcastData)
