@@ -16,10 +16,11 @@ const getGeocoding = async (q) => {
   const params = new URLSearchParams({
     q,
     aqi: "yes",
+    days: "6",
     key: API_KEY, // Corrected: Use 'appid' instead of 'API_KEY'
   })
   const response = await fetch(
-    "http://api.weatherapi.com/v1/current.json?" + params,
+    "http://api.weatherapi.com/v1/forecast.json?" + params,
   )
   const data = await response.json()
   return data

@@ -1,4 +1,5 @@
 // populateMenuList.js
+import forcastSection from "../components/forcastSection"
 import titleSection from "../components/titleSection"
 import weatherSection from "../components/weatherSection"
 import getGeocoding from "./FetchData/getGeocoding"
@@ -21,6 +22,7 @@ const populateMenuList = async (locationArr, tempFormat = "celcius") => {
           WeatherResponse.location.localtime,
         )
         await weatherSection(WeatherResponse, tempFormat)
+        await forcastSection(WeatherResponse, tempFormat)
       } catch (error) {
         throw new Error(
           error ||

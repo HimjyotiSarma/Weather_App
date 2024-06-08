@@ -32,7 +32,7 @@ const searchHandler = async (searchQuery) => {
   }
 }
 
-const debouncedSearchHandler = debounce(searchHandler, 700)
+const debouncedSearchHandler = debounce(searchHandler, 1000)
 
 const getSearchValue = () => {
   searchInput.addEventListener("input", (e) => {
@@ -57,6 +57,14 @@ const getSearchValue = () => {
     } else {
       locationMenu.classList.remove("menu_open")
     }
+  })
+
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let formValue = new FormData(searchForm)
+    let searchValue = formValue.get("search_location")
+    searchInput.value = searchValue
+    searchHandler(searchValue)
   })
 
   window.addEventListener("click", (e) => {

@@ -215,6 +215,40 @@ input:focus + button.search_location-btn {
   border-right-color: rgb(9, 53, 85);
   animation: l2 1s infinite linear;
 }
+.weather-forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forecast-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.date-day {
+  flex: 1;
+}
+
+.temperature {
+  flex: 1;
+}
+
+.description,
+.night-description {
+  flex: 2;
+  text-align: center;
+}
+
+.rain-chance {
+  flex: 1;
+  text-align: right;
+}
 @keyframes l2 {
   to {
     transform: rotate(1turn);

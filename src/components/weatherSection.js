@@ -11,10 +11,12 @@ const weatherSection = async (weather, tempFormat = "celcius") => {
   const shortTempFormat = tempFormat === "celcius" ? "°C" : "°F"
   // Get Outer Div of Weather Section
   const MainWeatherArea = document.querySelector(".weatherForcastArea")
-  MainWeatherArea.innerHTML = ""
+  // MainWeatherArea.innerHTML = ""
   // Create the outer weather section container
-  const outerWeatherSection = document.createElement("div")
-  outerWeatherSection.className = "weather-area"
+  // const outerWeatherSection = document.createElement("div")
+  // outerWeatherSection.className = "weather-area"
+  const outerWeatherSection = document.querySelector(".weather-area")
+  outerWeatherSection.innerHTML = ""
 
   // Create the temperature and weather area container
   const tempWeatherArea = document.createElement("div")
@@ -161,7 +163,6 @@ const weatherSection = async (weather, tempFormat = "celcius") => {
   temDescribeArea.append(...allBoxes)
 
   outerWeatherSection.append(tempWeatherArea, temDescribeArea)
-  MainWeatherArea.appendChild(outerWeatherSection)
 }
 
 export default weatherSection
