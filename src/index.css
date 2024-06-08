@@ -10,7 +10,7 @@ body {
   font-family: "Hepta Slab", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-color: #abe1ee;
+  background-color: #00abd0;
 }
 a {
   text-decoration: none;
@@ -231,8 +231,98 @@ input:focus + button.search_location-btn {
 .show_Menu {
   display: block;
 }
+.weatherForcastArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas: "weather-1 weather-2";
+}
 .tempDescription {
   text-transform: capitalize;
+}
+.weather-area {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  grid-gap: 10px;
+}
+.temp-weather-area {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  max-height: 90%;
+}
+.temp-descrip-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.weather_Info {
+  display: flex;
+  align-items: center;
+}
+.weather_Info img {
+  width: 100%;
+  height: 100%;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+}
+.current-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  min-height: 50%;
+}
+.current-temp .temp {
+  font-size: 4em;
+  font-weight: 500;
+}
+.current-temp .description {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+.temp-text {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.tempDescription {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.temp-weather-area h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.icon-area {
+  min-width: 150px;
+  max-width: 50%;
+  min-height: 150px;
+  max-height: 50%;
+}
+.info-box {
+  margin-left: 5px;
+}
+.info-box h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.uv-index-info {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background-color: rgb(123, 123, 123);
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
 }
 @keyframes l4 {
   to {
@@ -252,5 +342,10 @@ input:focus + button.search_location-btn {
 @media screen and (max-width: 600px) {
   .area_head {
     font-size: 1.5em;
+  }
+  .weather-area {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
