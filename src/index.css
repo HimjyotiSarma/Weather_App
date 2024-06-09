@@ -279,8 +279,6 @@ input:focus + button.search_location-btn {
   font-size: 1.5rem;
   font-weight: 600;
 }
-.low {
-}
 @keyframes l2 {
   to {
     transform: rotate(1turn);

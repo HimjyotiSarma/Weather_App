@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   let TempFaren = document.querySelector(".feren_btn")
   TempCelcius.classList.add("active")
   TempFaren.classList.remove("active")
+  if (!currentLocation) {
+    latitude = "28.7041"
+    longitude = "77.1025"
+  }
   if (currentLocation) {
     let [latitude, longitude] = currentLocation.split(",")
-    if (!latitude || !longitude) {
-      latitude = "28.7041"
-      longitude = "77.1025"
-    }
     const WeatherResponse = await getGeocoding(`${latitude},${longitude}`)
     titleSection(
       WeatherResponse.location.name,
