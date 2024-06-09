@@ -26,20 +26,33 @@ const loadMainContent = async (
   tempFormat = "metric",
 ) => {
   try {
-    // const weatherData = await getGeocoding(searchParam)
-    // console.log(weatherData)
-    // await titleSection(
-    //   weatherData.name,
-    //   weatherData.sys.country,
-    //   weatherData.timezone,
-    // )
     getSearchValue()
-    // await weatherSection(weatherData, tempFormat)
-    // await getGeoLocation("guwahati")
-
-    // await forcastSection(forcastData)
   } catch (error) {
     console.error(error)
   }
 }
+document.addEventListener("DOMContentLoaded", async () => {
+  const currentLocation = localStorage.getItem("CurrentLocation")
+  let tempFormat = "celcius"
+  let TempCelcius = document.querySelector(".celcius_btn")
+  let TempFaren = document.querySelector(".feren_btn")
+  TempCelcius.classList.add("active")
+  TempFaren.classList.remove("active")
+  if (currentLocation) {
+    let [latitude, longitude] = currentLocation.split(",")
+    if (!latitude || !longitude) {
+      latitude = "28.7041"
+      longitude = "77.1025"
+    }
+    const WeatherResponse = await getGeocoding(`${latitude},${longitude}`)
+    titleSection(
+      WeatherResponse.location.name,
+      WeatherResponse.location.country,
+      WeatherResponse.location.localtime,
+    )
+
+    await weatherSection(WeatherResponse, tempFormat)
+    await forcastSection(WeatherResponse, tempFormat)
+  }
+})
 loadMainContent()

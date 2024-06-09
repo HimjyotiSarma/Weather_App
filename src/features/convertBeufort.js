@@ -15,7 +15,7 @@ const convertBeufort = (windSpeed) => {
   console.log("WindSpeed", windSpeed)
   if (windSpeed < 2) {
     return windBeaufort0
-  } else if (windSpeed >= 2 && windSpeed <= 5) {
+  } else if (windSpeed >= 2 && windSpeed < 6) {
     return windBeaufort1
   } else if (windSpeed >= 6 && windSpeed < 12) {
     return windBeaufort2
