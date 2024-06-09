@@ -20,7 +20,7 @@ const getGeocoding = async (q) => {
     key: API_KEY, // Corrected: Use 'appid' instead of 'API_KEY'
   })
   const response = await fetch(
-    "http://api.weatherapi.com/v1/forecast.json?" + params,
+    "https://api.weatherapi.com/v1/forecast.json?" + params,
   )
   const data = await response.json()
   return data
