@@ -156,6 +156,7 @@ input:focus + button.search_location-btn {
   left: 0;
   width: 100%;
   z-index: 2;
+  display: none;
 }
 .location_dropdown * {
   box-sizing: border-box;
@@ -410,8 +411,35 @@ input:focus + button.search_location-btn {
     font-size: 1.5em;
   }
   .weather-area {
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+  }
+  .weatherForcastArea {
+    display: block;
+  }
+  .temp-weather-area {
     align-items: center;
+    justify-content: center;
+    line-height: 10px;
+  }
+  .current-temp {
+    align-items: center;
+  }
+  .description {
+    display: none;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .toggle_metric {
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: end;
+  }
+  .toggle_metric button {
+    min-height: 35px;
   }
 }

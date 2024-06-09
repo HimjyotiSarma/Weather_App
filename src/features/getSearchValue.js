@@ -42,6 +42,7 @@ const searchHandler = async (searchQuery, tempFormat = "celcius") => {
     loader.remove()
     locationMenu.classList.remove("hide_Menu")
     locationMenu.classList.add("show_Menu", "menu_open")
+    location_dropdown.classList.add("show_Menu")
   } catch (error) {
     loader.remove()
     throw new Error(error || "Error fetching locations from API")

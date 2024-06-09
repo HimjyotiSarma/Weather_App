@@ -4,6 +4,8 @@ import titleSection from "../components/titleSection"
 import weatherSection from "../components/weatherSection"
 import getGeocoding from "./FetchData/getGeocoding"
 
+let location_dropdown = document.querySelector(".location_dropdown")
+
 const populateMenuList = async (locationArr, tempFormat = "celcius") => {
   let resultList = []
   if (locationArr.length === 0) {
@@ -40,6 +42,8 @@ const populateMenuList = async (locationArr, tempFormat = "celcius") => {
         )
         await weatherSection(WeatherResponse, tempFormat)
         await forcastSection(WeatherResponse, tempFormat)
+        location_dropdown.classList.remove("show_Menu")
+        location_dropdown.classList.add("hide_Menu")
       } catch (error) {
         throw new Error(
           error ||
