@@ -123,10 +123,11 @@ const weatherSection = async (weather, tempFormat = "celcius") => {
     "Humidity",
     `${weather?.current?.humidity}%`,
   )
+  let heatTempFormat = tempFormat == "celcius" ? "heatindex_c" : "heatindex_f"
   const heatIndexBox = createWeatherBox(
     HeatIndexImg,
     "Heat Index",
-    `${weather?.current?.heatindex_c}°C`,
+    `${weather?.current[heatTempFormat]}${shortTempFormat}`,
   )
   const uvBox = createWeatherBox(
     convertUvImg(weather?.current?.uv || "N/A"),

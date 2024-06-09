@@ -21,10 +21,7 @@ const main = document.getElementsByTagName("main")[0]
 //   })
 //   .catch((error) => console.error(error))
 
-const loadMainContent = async (
-  searchParam = "delhi",
-  tempFormat = "metric",
-) => {
+const loadMainContent = async () => {
   try {
     getSearchValue()
   } catch (error) {
@@ -53,6 +50,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await weatherSection(WeatherResponse, tempFormat)
     await forcastSection(WeatherResponse, tempFormat)
+    await loadMainContent()
   }
 })
-loadMainContent()

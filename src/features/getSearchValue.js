@@ -19,6 +19,11 @@ loader.classList.add("loader")
 
 const searchHandler = async (searchQuery, tempFormat = "celcius") => {
   try {
+    if (searchQuery === "") {
+      locationMenu.classList.remove("show_Menu", "menu_open")
+      locationMenu.classList.add("hide_Menu")
+      return
+    }
     locationMenu.innerHTML = ""
     locationMenu.classList.add("hide_Menu")
     locationMenu.appendChild(loader)
@@ -75,7 +80,11 @@ const getSearchValue = () => {
     let formValue = new FormData(searchForm)
     let searchValue = formValue.get("search_location")
     searchInput.value = searchValue
-    searchHandler(searchValue)
+    debouncedSearchHandler(searchValue)
+  })
+
+  searchInput.addEventListener("focus", (e) => {
+    debouncedSearchHandler(e.target.value)
   })
   let TempChange = document.querySelectorAll(".toggle_metric button")
 
